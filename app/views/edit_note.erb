@@ -1,0 +1,18 @@
+<h1>What do you want to do with your note?</h1>
+<%= @note.note %>  <input type="submit" value="Delete me">
+<br><br>
+
+
+
+
+<form action='/note/<%=@note.id%>' method="post">
+  <input type="text" name="note" placeholder="<%=@note.note%>">
+  <!-- <input type="hidden" name="_method" value="put"> -->
+  <input type="submit" value="Update me"><br><br>
+</form>
+
+
+
+
+
+<a href="http://localhost:9393/notes">Back to my list</a>

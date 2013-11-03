@@ -1,0 +1,10 @@
+<h1> Here are all your notes</h1>
+<h4> Click on any of your notes below to edit or delete. </h4>
+
+<ol>
+  <% @all_notes.each do |note| %>
+     <li><a href="/note/<%=note.id%>"><%=note.note%></a></li>
+  <% end %>
+
+</ol>
+<a href="http://localhost:9393/notes/new"> Add new note here!</a>
