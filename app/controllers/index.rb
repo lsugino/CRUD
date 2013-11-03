@@ -17,18 +17,23 @@ post '/notes' do
   redirect '/notes'
 end
 
-# get '/note' do
-#   @note = Note.find(params[:id])
-#   erb :show_note
-# end
+get '/note' do
+  erb :show_note
+end
 
 get '/note/:id' do
   @note = Note.find(params[:id])
   erb :edit_note
 end
 
-post '/note/:id' do
+put '/note/:id' do
   @note = Note.find(params[:id])
   @note.update_attributes(note: params[:note])
   redirect "/note/#{@note.id}"
+end
+
+delete '/note/:id' do
+  note = Note.find(params[:id])
+  note.destroy
+  redirect '/note'
 end

@@ -1,5 +1,10 @@
 <h1>What do you want to do with your note?</h1>
-<%= @note.note %>  <input type="submit" value="Delete me">
+<%= @note.note %>  
+
+<form action="/note/<%=@note.id%>" method="post">
+  <input type="hidden" name="_method" value="delete">
+  <input type="submit" value="Delete me">
+</form>
 <br><br>
 
 
@@ -7,7 +12,7 @@
 
 <form action='/note/<%=@note.id%>' method="post">
   <input type="text" name="note" placeholder="<%=@note.note%>">
-  <!-- <input type="hidden" name="_method" value="put"> -->
+  <input type="hidden" name="_method" value="put">
   <input type="submit" value="Update me"><br><br>
 </form>
 
