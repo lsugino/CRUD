@@ -13,7 +13,8 @@ get '/notes/new' do
 end
 
 post '/notes' do
-  note = Note.create(note: params[:note])
+  p params
+  Note.create(note: params[:note])
   redirect '/notes'
 end
 

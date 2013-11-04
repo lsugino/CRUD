@@ -2,23 +2,42 @@
 <head>
   <style>
     header {
-      font-size: 28px;
+      font-size: 30px;
     }
     body {
       background: url("http://www.wpclipart.com/office/notes_memos/paper_clip_note_large.png");
       background-size: cover;
       margin-top: 50px;
       margin-left: 30px;
-
+      text-align: center;
+      font-weight: bold;
       }
+    div {
+      font-size: 40px;
+      padding-top: 30px;
+      font-weight: bold;
+      }
+    form[method="link"] {
+      padding-top: 11px;
+    }
+    input {
+      width:280px;
+      height: 30px;
+      font-size: 18px;
+    }
+    input[type="submit"] {
+      width: 100px;
+      height: 36px;
+      font-size: 18px;
+    }
   </style>
 </head>
 
 <body>
   <header>
-    <h1>What do you want to do with your note?</h1>
+    <h1>What do you want to do with <br>your note?</h1>
   </header>
-    <div><%= @note.note %>  </div>
+    <div><%= @note.note %></div>
 
   <form action="/note/<%=@note.id%>/remove" method="link">
     <input type="submit" value="Delete me">
