@@ -1,10 +1,49 @@
-<h1> Here are all your notes</h1>
-<h4> Click on any of your notes below to edit or delete. </h4>
+<head>
+  <style>
+ 
+  header {
+    text-align: center;
+    font-size: 35px;
+    }
 
-<ol>
-  <% @all_notes.each do |note| %>
-     <li><a href="/note/<%=note.id%>"><%=note.note%></a></li>
-  <% end %>
+  ol {
+    margin-left: 20px;
+  }
 
-</ol>
-<a href="http://localhost:9393/notes/new"> Add new note here!</a>
+  a {
+    color: black;
+    text-decoration: none
+    }
+
+  a[href="http://localhost:9393/notes/new"] {
+    color: blue;
+    text-decoration: underline;
+    margin-left: 25px;
+    }
+
+  body {
+    background: url("http://wakpaper.com/large/Music_wallpapers_440.png");
+    background-size: cover;
+    margin: 20px;
+    font-size: 18px;
+    }
+
+  </style>
+</head>
+
+
+
+<body>
+  <header>
+    <h1> Your notes</h1>
+    <h4> Click on any of your notes below to edit or delete. </h4>
+  </header>
+  
+  <ol>
+    <% @all_notes.each do |note| %>
+       <li><a href="/note/<%=note.id%>"><%=note.note%></a></li>
+    <% end %>
+  </ol>
+
+  <a href="http://localhost:9393/notes/new">  Add new note here!</a>
+</body>
