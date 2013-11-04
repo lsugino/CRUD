@@ -1,12 +1,24 @@
 <h1>What do you want to do with your note?</h1>
 <%= @note.note %>  
 
-<form action="/note/<%=@note.id%>" method="post">
-  <input type="hidden" name="_method" value="delete">
+
+
+<!-- (<FORM METHOD="LINK" ACTION="page1.htm"> 
+<INPUT TYPE="submit" VALUE="Clickable Button"> 
+</FORM>) 
+ -->
+
+<form action="/note/<%=@note.id%>/remove" method="link">
   <input type="submit" value="Delete me">
 </form>
 <br><br>
 
+<!-- 
+<form action="/note/<%=@note.id%>" method="post">
+  <input type="hidden" name="_method" value="delete">
+  <input type="submit" value="Delete me">
+</form>
+<br><br> -->
 
 
 

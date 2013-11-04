@@ -18,6 +18,7 @@ post '/notes' do
 end
 
 get '/note' do
+  @note = Note.find(params[:id])
   erb :show_note
 end
 
@@ -32,8 +33,13 @@ put '/note/:id' do
   redirect "/note/#{@note.id}"
 end
 
+get '/note/:id/remove' do
+  @note = Note.find(params[:id])
+  erb :delete
+end
+
 delete '/note/:id' do
   note = Note.find(params[:id])
   note.destroy
-  redirect '/note'
+  redirect '/notes'
 end
